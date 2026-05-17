@@ -14,7 +14,7 @@ export async function POST(request) {
     const aiRes = await fetch(`${AI_API_URL}/api/process`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${AI_API_KEY}` },
-      body: JSON.stringify({ task: 'generate_hexoriq', inputs })
+      body: JSON.stringify({ task: 'summarise_reviews', inputs })
     })
     const aiData = await aiRes.json()
     if (!aiRes.ok) throw new Error(aiData.error || 'AI generation failed')
@@ -25,7 +25,7 @@ export async function POST(request) {
     let itemId = null
     if (userId && DB_API_URL) {
       try {
-        const dbRes = await fetch(`${DB_API_URL}/db/hexoriq/hexoriq_items`, {
+        const dbRes = await fetch(`${DB_API_URL}/db/hexoriq/hexoriq_summaries`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DB_API_KEY}` },
           body: JSON.stringify({ user_id: userId, result_data: result, status: 'draft', ...inputs })
