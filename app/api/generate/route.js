@@ -28,7 +28,7 @@ export async function POST(request) {
         const dbRes = await fetch(`${DB_API_URL}/db/hexoriq/summaries`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${DB_API_KEY}` },
-          body: JSON.stringify({ user_id: userId, result_data: result, status: 'complete', ...inputs })
+          body: JSON.stringify({ user_id: userId, title: `${business_name} — ${time_period}`, business_name, time_period, result_data: result, status: 'complete' })
         })
         const dbData = await dbRes.json()
         itemId = dbData.data?.id || null
