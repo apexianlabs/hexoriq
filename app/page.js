@@ -35,10 +35,10 @@ export default function HomePage() {
           ✦ AI-Powered · Built for Professionals
         </div>
         <h1 style={{fontSize:'clamp(36px,5.5vw,64px)',fontWeight:900,lineHeight:1.05,letterSpacing:'-2px',marginBottom:20,maxWidth:760,margin:'0 auto 20px',color:'#0f172a'}}>
-          AI-powered review intelligence
+          Turn customer reviews into business intelligence.
         </h1>
         <p style={{fontSize:'clamp(16px,2vw,19px)',color:'#64748b',maxWidth:520,margin:'0 auto 36px',lineHeight:1.65,fontWeight:400}}>
-          AI-powered review intelligence
+          Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.
         </p>
         <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',marginBottom:20}}>
           <Link href="/generate" style={{padding:'14px 28px',background:'#dc2626',color:'#fff',textDecoration:'none',borderRadius:10,fontWeight:700,fontSize:15,letterSpacing:'-0.2px',boxShadow:'0 4px 14px rgba(0,0,0,0.15)'}}>

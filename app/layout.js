@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'HexorIQ — AI-powered review intelligence',
-  description: 'AI-powered review intelligence',
+  title: 'HexorIQ — Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.',
+  description: 'Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.',
 }
 export default function RootLayout({ children }) {
   return (

@@ -71,7 +71,7 @@ export default function LoginPage() {
         <h1 style={{fontSize:28,fontWeight:800,color:'#fff',lineHeight:1.2,marginBottom:12}}>
           {tab === 'login' ? 'Welcome back.' : 'Get started today.'}
         </h1>
-        <p style={{fontSize:14,color:'rgba(255,255,255,0.7)',lineHeight:1.6}}>AI-powered review intelligence</p>
+        <p style={{fontSize:14,color:'rgba(255,255,255,0.7)',lineHeight:1.6}}>Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.</p>
       </div>
       <div style={{zIndex:1,marginTop:'auto',background:'rgba(255,255,255,0.1)',borderRadius:12,padding:20,border:'1px solid rgba(255,255,255,0.15)'}}>
         <p style={{fontSize:13,color:'rgba(255,255,255,0.9)',lineHeight:1.6,marginBottom:10,fontStyle:'italic'}}>"HexorIQ saves me hours every week."</p>
