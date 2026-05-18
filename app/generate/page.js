@@ -128,9 +128,13 @@ export default function GeneratePage() {
             style={{width:'100%',padding:'13px',borderRadius:10,border:'none',background:loading?'#fca5a5':'#dc2626',color:'#fff',fontSize:15,fontWeight:700,cursor:loading?'not-allowed':'pointer',fontFamily:'Inter,sans-serif'}}>
             {loading ? '🔍 Analysing reviews...' : 'Analyse reviews →'}
           </button>
-          {!user && <p style={{textAlign:'center',fontSize:12,color:'#94a3b8',marginTop:12}}>
-            <Link href="/signup" style={{color:'#dc2626',textDecoration:'none',fontWeight:600}}>Sign up free</Link> to save analyses and track trends over time.
-          </p>}
+            <div style={{marginTop:16,background:'#fef9f0',border:'1px solid #fed7aa',borderRadius:8,padding:'12px 16px',display:'flex',gap:10,alignItems:'flex-start'}}>
+            <span style={{fontSize:16,flexShrink:0}}>🔔</span>
+            <div>
+              <p style={{fontSize:12,fontWeight:700,color:'#d97706',marginBottom:2}}>Automated weekly digests coming soon</p>
+              <p style={{fontSize:12,color:'#92400e',lineHeight:1.5}}>Connect your Google, Trustpilot, or App Store reviews and HexorIQ will automatically monitor and email you a weekly AI digest. <Link href="/signup" style={{color:'#d97706',fontWeight:600,textDecoration:'none'}}>Sign up</Link> to get early access.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
