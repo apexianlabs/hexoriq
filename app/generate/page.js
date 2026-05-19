@@ -29,6 +29,11 @@ export default function GeneratePage() {
         body: JSON.stringify({ ...form, userId: user?.id })
       })
       const data = await res.json()
+      if (res.status === 402) {
+        setError('limit_reached')
+        setLoading(false)
+        return
+      }
       if (!res.ok) throw new Error(data.error || 'Failed')
       setResult(data.result)
       setItemId(data.itemId)
