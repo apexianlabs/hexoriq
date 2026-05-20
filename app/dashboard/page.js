@@ -212,7 +212,7 @@ useEffect(() => {
               <span style={{fontSize:12,fontWeight:700,color:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626'}}>{usageData.used} / {usageData.limit} uses</span>
             </div>
             <div style={{background:'#f1f5f9',borderRadius:6,height:6,marginBottom:8}}>
-              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626',borderRadius:6,height:6,width:Math.min(100,(usageData.used/usageData.limit)*100)+'%',transition:'width 0.3s'}}/>
+              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626',borderRadius:6,height:6,width:Math.max(4,Math.min(100,(usageData.used/usageData.limit)*100))+'%',transition:'width 0.3s'}}/>
             </div>
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
               <span style={{fontSize:11,color:'#94a3b8'}}>Resets {new Date(usageData.reset_date).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
