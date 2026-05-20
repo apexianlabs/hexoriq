@@ -79,24 +79,6 @@ useEffect(() => {
 
   const Sidebar = () => (
     <div style={{width:220,background:'#0f172a',display:'flex',flexDirection:'column',minHeight:'100vh',flexShrink:0,position:'relative'}}>
-
-        {usageData && usageData.plan === 'free' && (
-          <div style={{background:'#fff',border:'1px solid #e2e8f0',borderRadius:12,padding:16,marginBottom:16}}>
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
-              <span style={{fontSize:12,fontWeight:600,color:'#475569'}}>Free plan usage this month</span>
-              <span style={{fontSize:12,fontWeight:700,color:usageData.used >= usageData.limit ? '#dc2626' : '#059669'}}>{usageData.used} / {usageData.limit} uses</span>
-            </div>
-            <div style={{background:'#f1f5f9',borderRadius:6,height:6,marginBottom:8}}>
-              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#059669',borderRadius:6,height:6,width:Math.min(100,(usageData.used/usageData.limit)*100)+'%',transition:'width 0.3s'}}/>
-            </div>
-            {usageData.used >= 2 && (
-              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-                <span style={{fontSize:11,color:'#94a3b8'}}>Resets {new Date(usageData.reset_date).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
-                <a href="/billing" style={{fontSize:11,fontWeight:700,color:'#dc2626',textDecoration:'none'}}>Upgrade →</a>
-              </div>
-            )}
-          </div>
-        )}
       {/* Logo */}
       <div style={{padding:'20px 16px 16px',borderBottom:'1px solid rgba(255,255,255,0.06)'}}>
         <Link href="/" style={{display:'flex',alignItems:'center',gap:9,textDecoration:'none'}}>
@@ -222,7 +204,23 @@ useEffect(() => {
                 <Link href="/generate" style={{fontSize:12,color:'#dc2626',textDecoration:'none',fontWeight:600,background:'rgba(0,0,0,0.03)',padding:'4px 10px',borderRadius:6}}>+ New</Link>
               </div>
 
-              {loading ? (
+              
+        {usageData && usageData.plan === 'free' && (
+          <div style={{background:'#fff',border:'1px solid #e2e8f0',borderRadius:12,padding:16,marginBottom:16}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
+              <span style={{fontSize:12,fontWeight:600,color:'#475569'}}>Free plan · this month</span>
+              <span style={{fontSize:12,fontWeight:700,color:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626'}}>{usageData.used} / {usageData.limit} uses</span>
+            </div>
+            <div style={{background:'#f1f5f9',borderRadius:6,height:6,marginBottom:8}}>
+              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626',borderRadius:6,height:6,width:Math.min(100,(usageData.used/usageData.limit)*100)+'%',transition:'width 0.3s'}}/>
+            </div>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+              <span style={{fontSize:11,color:'#94a3b8'}}>Resets {new Date(usageData.reset_date).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span>
+              <a href="/billing" style={{fontSize:11,fontWeight:700,color:'#dc2626',textDecoration:'none'}}>Upgrade →</a>
+            </div>
+          </div>
+        )}
+        {loading ? (
                 <div style={{padding:48,textAlign:'center',color:'#94a3b8',fontSize:13}}>Loading...</div>
               ) : recentItems.length === 0 ? (
                 <div style={{padding:'48px 24px',textAlign:'center'}}>
