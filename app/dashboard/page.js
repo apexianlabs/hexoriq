@@ -84,10 +84,10 @@ useEffect(() => {
           <div style={{background:'#fff',border:'1px solid #e2e8f0',borderRadius:12,padding:16,marginBottom:16}}>
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
               <span style={{fontSize:12,fontWeight:600,color:'#475569'}}>Free plan usage this month</span>
-              <span style={{fontSize:12,fontWeight:700,color:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626'}}>{usageData.used} / {usageData.limit} uses</span>
+              <span style={{fontSize:12,fontWeight:700,color:usageData.used >= usageData.limit ? '#dc2626' : '#059669'}}>{usageData.used} / {usageData.limit} uses</span>
             </div>
             <div style={{background:'#f1f5f9',borderRadius:6,height:6,marginBottom:8}}>
-              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#dc2626',borderRadius:6,height:6,width:Math.min(100,(usageData.used/usageData.limit)*100)+'%',transition:'width 0.3s'}}/>
+              <div style={{background:usageData.used >= usageData.limit ? '#dc2626' : '#059669',borderRadius:6,height:6,width:Math.min(100,(usageData.used/usageData.limit)*100)+'%',transition:'width 0.3s'}}/>
             </div>
             {usageData.used >= 2 && (
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
