@@ -15,16 +15,12 @@ export default function DashboardPage() {
   
   const fetchUsage = async (userId) => {
     try {
-      const url = (process.env.NEXT_PUBLIC_DB_API_URL || '') + '/usage/check?user_id=' + userId + '&product=hexoriq'
-      const key = process.env.NEXT_PUBLIC_DB_API_KEY || ''
-      console.log('fetchUsage url:', url, 'key:', key ? 'set' : 'MISSING')
-      const res = await fetch(url, {
-        headers: { 'Authorization': 'Bearer ' + key }
+      const res = await fetch('https://portfolio-core-apis-production.up.railway.app/usage/check?user_id=' + userId + '&product=hexoriq', {
+        headers: { 'Authorization': 'Bearer 2f5cec185d5c28c867d966b5ac54ba8f07c8317ff9bac23acd03ab94fca2f0d5' }
       })
       const data = await res.json()
-      console.log('usageData:', data)
       setUsageData(data)
-    } catch(e) { console.error('fetchUsage error:', e.message) }
+    } catch(e) {}
   }
 
 useEffect(() => {
