@@ -15,12 +15,16 @@ export default function DashboardPage() {
   
   const fetchUsage = async (userId) => {
     try {
-      const res = await fetch(process.env.NEXT_PUBLIC_DB_API_URL + '/usage/check?user_id=' + userId + '&product=hexoriq', {
-        headers: { 'Authorization': 'Bearer ' + process.env.NEXT_PUBLIC_DB_API_KEY }
+      const url = (process.env.NEXT_PUBLIC_DB_API_URL || '') + '/usage/check?user_id=' + userId + '&product=hexoriq'
+      const key = process.env.NEXT_PUBLIC_DB_API_KEY || ''
+      console.log('fetchUsage url:', url, 'key:', key ? 'set' : 'MISSING')
+      const res = await fetch(url, {
+        headers: { 'Authorization': 'Bearer ' + key }
       })
       const data = await res.json()
+      console.log('usageData:', data)
       setUsageData(data)
-    } catch(e) {}
+    } catch(e) { console.error('fetchUsage error:', e.message) }
   }
 
 useEffect(() => {
