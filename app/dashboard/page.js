@@ -15,9 +15,7 @@ export default function DashboardPage() {
   
   const fetchUsage = async (userId) => {
     try {
-      const res = await fetch('https://portfolio-core-apis-production.up.railway.app/usage/check?user_id=' + userId + '&product=hexoriq', {
-        headers: { 'Authorization': 'Bearer 2f5cec185d5c28c867d966b5ac54ba8f07c8317ff9bac23acd03ab94fca2f0d5' }
-      })
+      const res = await fetch('/api/usage?user_id=' + userId)
       const data = await res.json()
       setUsageData(data)
     } catch(e) {}
