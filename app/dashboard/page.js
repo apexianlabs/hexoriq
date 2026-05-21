@@ -297,6 +297,15 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <div style={{borderTop:'1px solid #e2e8f0',padding:'14px 28px',display:'flex',alignItems:'center',justifyContent:'space-between',background:'#fff',marginTop:'auto'}}>
+        <span style={{fontSize:11,color:'#94a3b8'}}>© 2026 HexorIQ</span>
+        <div style={{display:'flex',gap:20}}>
+          <a href="https://hexoriq.com/privacy" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Privacy</a>
+          <a href="https://hexoriq.com/terms" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Terms</a>
+          <a href="https://hexoriq.com/support" style={{fontSize:11,color:'#94a3b8',textDecoration:'none'}} target="_blank" rel="noreferrer">Support</a>
+        </div>
+      </div>
     </div>
   )
 }
