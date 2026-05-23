@@ -1,4 +1,5 @@
 export const metadata = {
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   title: 'HexorIQ — Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.',
   description: 'Paste your reviews and get an instant AI summary — themes, sentiment, and action points — in seconds.',
 }
